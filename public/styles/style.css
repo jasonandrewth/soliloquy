@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 32px;
+  font-family: monospace, sans-serif;
+  background: black;
+  color: rgb(0, 170, 0);
+}
+
+#size-display {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: xx-large;
+  padding: 32px;
+  color: rgb(253, 0, 0);
+
+  @media screen and (max-width: 680px) {
+    font-size: 36px;
+    padding: 24px;
+  }
+}
+
+a {
+  color: rgb(0, 170, 0);
+  text-decoration: none;
+}
+
+.underline:hover {
+  color: rgb(0, 170, 0);
+}
+
+.underline {
+  position: relative;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgb(0, 170, 0);
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.underline:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.cursor {
+  animation: cursor 2s infinite;
+  color: rgb(0, 170, 0);
+  display: inline-block;
+  width: 8px;
+  margin-left: 5px;
+  border-radius: 1px;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.container {
+  display: flex;
+  align-content: center;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}

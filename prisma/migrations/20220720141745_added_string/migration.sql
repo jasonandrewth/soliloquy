@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Log" ALTER COLUMN "size" SET DEFAULT '0 kb',
+ALTER COLUMN "size" SET DATA TYPE TEXT;
